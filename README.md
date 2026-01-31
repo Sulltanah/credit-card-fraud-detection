@@ -118,8 +118,4 @@ This project was developed for educational and research purposes and is not inte
 - Leen Alqahtani  
 
 
----
-## 👥 Team Members
-- Sultanah Alotaibi
-- Layan Alshehri
-- Leen Alqahtani
+
