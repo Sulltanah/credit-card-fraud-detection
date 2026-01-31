@@ -1,86 +1,122 @@
 # Credit Card Fraud Detection using Autoencoder (Deep Learning)
 
-## 📌 Project Overview
-This project focuses on detecting **fraudulent credit card transactions** using **Anomaly Detection** with a **Deep Learning Autoencoder** model implemented in **PyTorch**.
+## Project Overview
+This project focuses on detecting fraudulent credit card transactions using unsupervised anomaly detection with a Deep Learning Autoencoder implemented in PyTorch.
 
-Since fraudulent transactions are rare and often different from normal behavior, the model is trained only on **normal (non-fraud) transactions** and learns their patterns. Transactions with high reconstruction error are flagged as potential fraud.
-
----
-
-## 🎯 Objectives
-- Detect anomalous (fraudulent) credit card transactions
-- Apply Deep Learning for unsupervised anomaly detection
-- Evaluate model performance using reconstruction error and thresholding
+Due to the highly imbalanced nature of fraud data, the model is trained only on normal (non-fraud) transactions to learn their underlying patterns. Transactions that result in a high reconstruction error are flagged as potential fraud.
 
 ---
 
-## 🧠 Model Used
-**Autoencoder Neural Network**
-- Fully connected (MLP-based)
-- Trained on normal transactions only
-- Uses reconstruction error to detect anomalies
+## Objectives
+- Detect anomalous (fraudulent) credit card transactions  
+- Apply Deep Learning techniques for unsupervised anomaly detection  
+- Handle extreme class imbalance in fraud datasets  
+- Evaluate model performance using reconstruction error and thresholding  
 
 ---
 
-## 🗂 Dataset
-- **Dataset:** Credit Card Transactions Dataset  
-- **Source:** Public dataset (e.g., Kaggle)
-- **Features:** Numerical features (V1–V28), Amount, Time
-- **Labels:**
-  - `0` → Normal transaction
-  - `1` → Fraudulent transaction
-
-> ⚠️ Fraud cases are highly imbalanced compared to normal transactions.
+## Model Used
+### Autoencoder Neural Network
+- Fully connected (MLP-based) architecture  
+- Trained exclusively on normal transactions  
+- Uses reconstruction error to detect anomalies  
 
 ---
 
-## 🔄 Project Pipeline
-1. Data Loading
-2. Data Preprocessing & Normalization
-3. Splitting Normal vs Fraud Data
-4. Training Autoencoder on Normal Transactions
-5. Calculating Reconstruction Error
-6. Threshold Selection
-7. Fraud Detection
-8. Model Evaluation
+## Dataset
+- Dataset: Credit Card Transactions Dataset  
+- Source: Public dataset (e.g., Kaggle)  
+- Features: Numerical features (V1–V28), Amount, Time  
+- Labels:  
+  - 0 → Normal transaction  
+  - 1 → Fraudulent transaction  
+
+Fraud cases are highly imbalanced compared to normal transactions.
 
 ---
 
-## 🛠 Technologies & Tools
-- Python
-- PyTorch
-- NumPy
-- Pandas
-- Scikit-learn
-- Matplotlib / Seaborn
-- Jupyter Notebook / Google Colab
+## Project Pipeline
+1. Data loading  
+2. Data preprocessing and normalization  
+3. Splitting normal vs fraud data  
+4. Training the autoencoder on normal transactions  
+5. Calculating reconstruction error  
+6. Threshold selection  
+7. Fraud detection  
+8. Model evaluation  
 
 ---
 
-## 📐 Threshold Selection
-- Fraud is detected when **Reconstruction Error > Threshold**
-- Threshold is selected based on:
-  - Distribution of reconstruction errors
-  - Validation results
-  - Trade-off between Precision and Recall
+## Technologies & Tools
+- Python  
+- PyTorch  
+- NumPy  
+- Pandas  
+- Scikit-learn  
+- Matplotlib / Seaborn  
+- Jupyter Notebook / Google Colab  
 
 ---
 
-## 📊 Evaluation Metrics
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix
+## Threshold Selection
+Fraud is detected when the reconstruction error exceeds a selected threshold.
 
-> Note: Accuracy alone is not sufficient due to data imbalance.
+The threshold is determined based on:
+- Distribution of reconstruction errors  
+- Validation set performance  
+- Trade-off between precision and recall  
 
 ---
 
-## 🚀 Results
-- The model successfully learns normal transaction patterns
-- Fraudulent transactions show significantly higher reconstruction error
-- Autoencoder is effective for anomaly detection in highly imbalanced datasets
+## Evaluation Metrics
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+- Confusion Matrix  
+
+Accuracy alone is not sufficient due to the highly imbalanced nature of the dataset.
+
+---
+
+## Results
+- The model successfully learns normal transaction patterns  
+- Fraudulent transactions exhibit significantly higher reconstruction error  
+- The autoencoder is effective for anomaly detection in highly imbalanced datasets  
+
+### Model Performance
+![Model Performance](assets/metrics_bar.png)
+
+### Confusion Matrix – Validation
+![Confusion Matrix Validation](assets/cm_validation.png)
+
+### Confusion Matrix – Test
+![Confusion Matrix Test](assets/cm_test.png)
+
+### Precision–Recall Curve
+![Precision Recall Curve](assets/pr_curve.png)
+
+---
+
+## Training Behavior
+![Training vs Validation Loss](assets/loss_curve.png)
+
+Training loss decreases consistently while validation loss increases slightly after several epochs, indicating mild overfitting.
+
+---
+
+## Deployment
+The trained model has been deployed for demonstration and evaluation purposes, enabling end-to-end testing of fraud detection on unseen transaction data.
+
+This project was developed for educational and research purposes and is not intended for production use.
+
+---
+
+## Team Members
+- Sultanah Alotaibi  
+- Layan Alshehri  
+- Leen Alqahtani  
+
 
 ---
 ## 👥 Team Members
