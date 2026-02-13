@@ -105,11 +105,10 @@ Training loss decreases consistently while validation loss increases slightly af
 
 ---
 
-## Deployment
-The trained model has been deployed for demonstration and evaluation purposes, enabling end-to-end testing of fraud detection on unseen transaction data.
-
-This project was developed for educational and research purposes and is not intended for production use.
-
+## Deployment (Prototype Interface)
+A prototype interface was developed to simulate real-time fraud prediction using the trained Autoencoder model.
+The interface processes transaction inputs through the trained model and generates fraud predictions based on the selected reconstruction error threshold.
+This deployment was implemented for demonstration and educational purposes.
 ---
 
 ## Team Members
